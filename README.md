@@ -1,3 +1,5 @@
+<img src="https://github.com/dronebird/oam_chofu20221029disasterdrill0745koga02p3p02/blob/main/chofu20221029.jpg?raw=true" width="600">
+
 # oam_chofu20221029disasterdrill0745koga02p3p02
 
 ## データアクセス方法
