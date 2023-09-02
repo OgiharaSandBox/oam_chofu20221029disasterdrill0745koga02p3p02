@@ -1,0 +1,12 @@
+name: Larger runnner test
+
+on: workflow_dispatch
+
+jobs:
+  my-job:
+    runs-on:
+      # 大規模ランナー名を指定
+      labels: test-larger-runner
+    steps:
+      - name: Measure memory size
+        run: free -m
