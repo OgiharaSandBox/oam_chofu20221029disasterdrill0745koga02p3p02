@@ -1,12 +1,15 @@
-name: Larger runnner test
+name: ODM Docker Run
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
-  my-job:
-    runs-on:
-      # 大規模ランナー名を指定
-      labels: test-larger-runner
+  run-odm:
+    runs-on: test-larger-runner
     steps:
-      - name: Measure memory size
-        run: free -m
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Run ODM in Docker
+      run: |
+        docker run --rm -v ${{ github.workspace }}:/datasets/code opendronemap/odm --project-path /datasets
