@@ -14,6 +14,11 @@ jobs:
       run: |
         docker run --rm -v ${{ github.workspace }}:/datasets/code opendronemap/odm --project-path /datasets
     
+    - name: Update permissions for generated files
+      run: |
+        sudo chown -R runner:runner .
+        chmod -R 777 .
+
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
