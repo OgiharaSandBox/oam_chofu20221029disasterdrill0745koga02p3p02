@@ -13,3 +13,22 @@ jobs:
     - name: Run ODM in Docker
       run: |
         docker run --rm -v ${{ github.workspace }}:/datasets/code opendronemap/odm --project-path /datasets
+    
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: odm-output
+        path: |
+          ${{ github.workspace }}/benchmark.txt
+          ${{ github.workspace }}/cameras.json
+          ${{ github.workspace }}/images.json
+          ${{ github.workspace }}/img_list.txt
+          ${{ github.workspace }}/log.json
+          ${{ github.workspace }}/odm_filterpoints/
+          ${{ github.workspace }}/odm_georeferencing/
+          ${{ github.workspace }}/odm_meshing/
+          ${{ github.workspace }}/odm_orthophoto/
+          ${{ github.workspace }}/odm_report/
+          ${{ github.workspace }}/odm_texturing/
+          ${{ github.workspace }}/odm_texturing_25d/
+          ${{ github.workspace }}/opensfm/
